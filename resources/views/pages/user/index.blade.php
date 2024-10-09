@@ -57,11 +57,11 @@
                                 <h6>{{ $item->price }}</h6>
                             </div>
                             <div class="prd-bottom">
-                                <a href="#" class="social-info">
+                                <a href="javascript:void(0);" onclick="confirmPurchase('{{ $item->id }}', '{{ Auth::user()->id }}')" class="social-info">
                                     <span class="ti-bag"></span>
                                     <p class="hover-text">Beli</p>
                                 </a>
-                                <a href="#" class="social-info">
+                                <a href="{{ route('user.detail.product', $item->id) }}" class="social-info">
                                     <span class="lnr lnr-move"></span>
                                     <p class="hover-text">Detail</p>
                                 </a>
@@ -79,5 +79,25 @@
         </div>
     </div>
 </section>
-<!-- end product Area -->
+<!-- end product Area -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script>
+    function confirmPurchase(productId, userId) {
+        Swal.fire({
+            title: 'Apakah Anda yakin?',
+            text: "Anda akan membeli produk ini!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Ya, Beli!',
+            cancelButtonText: 'Batal'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                window.location.href = '/product/purchase/' + productId
+                    + '/' + userId;
+            }
+        });
+    }
+</script>
 @endsection
