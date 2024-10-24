@@ -5,11 +5,9 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Skripsi extends Model
+class Distributor extends Model
 {
     use HasFactory;
-
     protected $fillable = [
-        'judul', 'nama', 'nim', 'angkatan','dosenpembimbing1','dosenpembimbing2'
-    ];
+         'name_distributor', 'kota', 'provinsi', 'kontak','email'];
 }

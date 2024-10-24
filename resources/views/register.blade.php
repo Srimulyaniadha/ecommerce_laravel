@@ -3,7 +3,7 @@
 
 <head>
     <!-- Mobile Specific Meta -->
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-tofit=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-tofit=no">
     <!-- Favicon-->
     <link rel="shortcut icon" href="
  {{ asset('assets/templates/user/img/fav.png') }}">
@@ -47,8 +47,7 @@ CSS ============================================= -->
                 <div class="col-lg-6">
                     <div class="login_form_inner">
                         <h3>Register new account</h3>
-                        <form class="row login_form" action="{{ 
-route('post.register') }}" method="POST" id="contactForm" novalidate="novalidate">
+                        <form class="row login_form" action="{{ route('post.register') }}" method="POST" id="contactForm" novalidate="novalidate">
                             @csrf
                             <div class="col-md-12 form-group">
                                 <input type="text" class="form-control" id="name" name="name" placeholder="Name"
@@ -60,8 +59,7 @@ route('post.register') }}" method="POST" id="contactForm" novalidate="novalidate
                             </div>
                             <div class="col-md-12 form-group">
                                 <input type="password" class="form-control" id="password" name="password"
-                                    placeholder="Password" onfocus="this.placeholder = 
-''" onblur="this.placeholder = 'Password'">
+                                    placeholder="Password" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Password'">
                             </div>
                             <div class="col-md-12 form-group">
                                 <button type="submit" value="submit" class="primary-btn">Create Account</button>
